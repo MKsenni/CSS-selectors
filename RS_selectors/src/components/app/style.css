@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Rum+Raisin&display=swap');
+
+/* @font-face {
+  font-family: 'Rum Raisin', sans-serif;
+  src: url('../../asset/fonts/RumRaisin-Regular.woff') format('woff'), url('../../asset/fonts/RumRaisin-Regular.ttf') format('truetype');
+  font-style: normal; 
+  font-weight: normal; 
+} */
+
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-image: url('../../asset/image/fone.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Rum Raisin', sans-serif;
+}
+
+.header {
+  /* height: 100px; */
+  /* background-image: url('../../asset/image/—Pngtree—popular\ ribbon\ pastel\ color\ blue_8383646.png');
+  background-position: center;
+  background-size: 55%;
+  background-repeat: no-repeat; */
+}
+
+.header .title {
+  text-align: center;
+  color: #509695;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.footer__link {
+  height: 45px;
+}
+
+.github,
+.rss {
+  height: 100%;
+}
