@@ -36,14 +36,6 @@ html {
   font-family: 'Rum Raisin', sans-serif;
 }
 
-.header {
-  /* height: 100px; */
-  /* background-image: url('../../asset/image/—Pngtree—popular\ ribbon\ pastel\ color\ blue_8383646.png');
-  background-position: center;
-  background-size: 55%;
-  background-repeat: no-repeat; */
-}
-
 .header .title {
   text-align: center;
   color: #509695;
@@ -62,4 +54,139 @@ html {
 .github,
 .rss {
   height: 100%;
+}
+
+.container {
+  display: flex;
+  height: 500px;
+}
+
+.play-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 65%;
+}
+
+.table {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 35%;
+  width: 90%;
+  margin: 0 auto;
+  background-color: rgb(217 238 241 / 85%);
+  border-radius: 7px;
+}
+
+.table-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.editor {
+  height: 60%;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.editor__css {
+  width: 45%;
+  background-color: rgb(217 238 241 / 85%);
+  border-radius: 7px;
+}
+
+.editor__html {
+  width: 45%;
+  background-color: rgb(217 238 241 / 85%);
+  border-radius: 7px;
+}
+
+.task-field {
+  width: 30%;
+  background-color: rgb(217 238 241 / 85%);
+  border-radius: 7px;
+}
+
+.task-field__levels {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.level {
+  cursor: pointer;
+}
+
+plate {
+  display: inline-block;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: 0 10px;
+  border-bottom: solid 5px #DDD;
+  border-radius: 100px;
+  background: white;
+  box-shadow: 0px 8px 0px rgba(0,0,0,.1);
+}
+
+plate::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: calc(50% - 32px);
+  top: calc(50% - 32px);
+  height: 65px;
+  width: 65px;
+  border-radius: 60px;
+  border-top: solid 6px #CCC;
+  opacity: 0.4;
+  background: rgba(255,255,255,1);
+}
+
+pre {
+  font-family: 'Rum Raisin', sans-serif;
+}
+
+cookie {
+  display: inline-block;
+  position: relative;
+  top: calc(50% - 15px);
+  left: calc(50% - 15px);
+  height: 30px;
+  width: 30px;
+  margin: 0;
+  border-radius: 100px;
+  border-style: solid;
+  border-width: 2px 4px 8px 4px ;
+  border-color: #4f250d;
+  box-shadow: 0px 5px 0px rgba(0,0,0,.2);
+  background: #873d12;
+}
+
+cookie::before {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 4px;
+  bottom: 3px;
+  height: 3px;
+  width: 3px;
+  border-radius: 3px;
+  background-color: black;
+}
+
+cookie::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 5px;
+  top: 6px;
+  height: 3px;
+  width: 3px;
+  border-radius: 3px;
+  background-color: black;
 }

@@ -16,12 +16,13 @@ module.exports = {
   devtool,
   devServer: {
     open: true,
+    hot: true,
   },
-  entry: ['@babel/polyfill', path.resolve(__dirname, 'src', 'index')],
+  entry: ['@babel/polyfill', path.resolve(__dirname, 'src', 'index.ts')],
   output: {
     path: path.resolve(__dirname, 'dist'),
     clean: true,
-    filename: '[name].[contenthach].js',
+    filename: '[name][hash].js',
     assetModuleFilename: 'assets/[hash][ext]',
   },
   plugins: [
@@ -29,7 +30,7 @@ module.exports = {
       template: path.resolve(__dirname, 'src', 'index.html'),
     }),
     new MiniCssExtractPlugin({
-      filename: '[name].[contenthach].css',
+      filename: '[name][hash][ext]',
     }),
     new EslintPlugin({ 
       extensions: 'ts'
@@ -78,6 +79,10 @@ module.exports = {
         },
       },
       {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
+      },
+      {
         test: /\.(jpe?g|png|webp|gif|svg)$/i,
         use: [
           {
@@ -108,10 +113,6 @@ module.exports = {
         generator: {
           filename: 'image/[name][ext]',
         },
-      },
-      {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: 'asset/resource',
       },
       {
         test: /\.(?:js|mjs|cjs)$/,

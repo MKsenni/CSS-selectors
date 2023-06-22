@@ -15,11 +15,11 @@ module.exports = {
     plugins: ["@typescript-eslint"],
     root: true,
     rules: {
-        "@typescript-eslint/no-explicit-any": 2,
+        '@typescript-eslint/no-explicit-any': 2,
         'import/extensions': 'off',
         'import/prefer-default-export': 'off',
-        // '@typescript-eslint/no-explicit-any': 'error',
-        '@typescript-eslint/no-unused-vars': 'off',
+        '@typescript-eslint/no-explicit-any': 'error',
+        'no-unused-vars': 'off',
         '@typescript-eslint/array-type': [
         'error',
             {

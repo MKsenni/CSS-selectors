@@ -1,4 +1,4 @@
 import App from "./components/app/app";
 
-const app = new App();
+const app: void = App();
 app;
