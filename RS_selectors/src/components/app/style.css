@@ -27,7 +27,7 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 50px;
+  gap: 20px;
   height: 100vh;
   margin: 0;
   padding: 0;
@@ -87,7 +87,7 @@ html {
   /* display: flex;
   justify-content: center;
   align-items: center; */
-  height: 50%;
+  height: 40%;
   width: 90%;
   margin: 0 auto;
   /* background-color: rgb(217 238 241 / 85%); */
@@ -120,7 +120,7 @@ html {
 }
 
 .editor {
-  height: 50%;
+  height: 60%;
   display: flex;
   justify-content: center;
   gap: 5px;
@@ -132,10 +132,67 @@ html {
   border-radius: 7px;
 }
 
+.enter {
+  position: relative;
+  top: 3px;
+  right: 3px;
+  width: 50px;
+  height: 20px;
+  border-radius: 3px;
+  background-color: rgba(180, 12, 12, 0.698);
+  text-align: center;
+  cursor: pointer;
+  /* border: 1px solid #7e1515; */
+  box-shadow: 0px 5px 8px 1px #591313;
+  font-size: 0.8rem;
+}
+
+.css__title,
+.html__title {
+  height: 11%;
+  padding: 5px 0px 0px 10px;
+  background-color: rgb(255 255 255 / 30%);
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+}
+
+.html__wrapper,
+.css__wrapper {
+  height: 100%;
+  display: flex;
+}
+
 .editor__html {
   width: 45%;
   background-color: rgb(255 255 255 / 34%);
   border-radius: 7px;
+}
+
+.line-numbers {
+  height: 89%;
+  width: 10%;
+  text-align: center;
+  background-color: rgb(255 255 255 / 15%);
+  border-bottom-left-radius: 7px;
+}
+
+.input-css {
+  display: inline-block;
+  background: rgba(255, 255, 255, 12%);
+  border: none;
+  width: calc(100% - 17px);
+  font-family: 'Rum Raisin', sans-serif;
+}
+
+.text-html,
+.text-css {
+  height: 85%;
+  width: 85%;
+  margin-left: 5px;
+}
+
+.layout {
+  margin: 0;
 }
 
 .task-field {
@@ -579,7 +636,7 @@ apple::before {
   background: rgb(110 66 23);
   height: 33%;
   width: 6%;
-  bottom: 37px;
+  bottom: 42px;
   left: calc(50% - 3%);
   border-radius: 3px;
 }
@@ -595,7 +652,7 @@ redhot {
   border-radius: 30px;
   border: solid 2px #d36519;
   border-width: 2px 2px 6px 2px;
-  box-shadow: 0px 5px 0px rgba(0,0,0,.2);
+  box-shadow: 4px 3px 0px rgba(0, 0, 0, 0.2);
   transition: transform ease-out .2s;
   rotate: 45deg;
 }

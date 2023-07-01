@@ -3,7 +3,7 @@ import { nodeToString } from "../nodeToString";
 import { createElement } from "../../utills/createElement";
 
 export function htmlField(): HTMLElement | null {
-  const htmlEditor: HTMLElement | null = document.querySelector('.editor__html');
+  const htmlEditor: HTMLElement | null = document.querySelector('.text-html');
   const arrows: HTMLElement | null = document.querySelector('.arrows');
 
   if (htmlEditor) {
