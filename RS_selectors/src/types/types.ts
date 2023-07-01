@@ -4,16 +4,16 @@ export enum Marks {
 }
 
 export enum Tags {
-  PLATE = 'plate',
-  COFFEE = 'coffee',
-  EGGS = 'eggs',
-  TOAST = 'toast',
-  COOKIE = 'cookie',
-  ORANGE = 'orange',
-  APPLE = 'apple',
-  CROISSANT = 'croissant',
+  PLATE = 'plate',//
+  COFFEE = 'coffee',//
+  EGGS = 'eggs',// boiled, fired
+  TOAST = 'toast',//
+  COOKIE = 'cookie',//
+  ORANGE = 'orange',//
+  APPLE = 'apple',//
+  CROISSANT = 'croissant',//
   REDHOT = 'redhot',
-  TABLE = 'table',
+  TABLE = 'tablecloth',//
 }
 
 export enum Levels {

@@ -1,15 +1,18 @@
 import { levelParams } from "../taskField/levels";
-import { nodeToText } from "../nodeToString";
+import { nodeToElement } from "../nodeToString";
 import { createElement } from "../../utills/createElement";
 
 export function htmlTable(): HTMLElement | null {
-  const table: HTMLElement | null = document.querySelector('.table');
+  const table: HTMLElement | null = document.querySelector('.play-field__table');
   const arrows: HTMLElement | null = document.querySelector('.arrows');
 
   if (table) {
   const tableWrapper = createElement('div', 'table-wrapper');
+  const tableSurface = createElement('div', 'table-surface');
+  
+  tableWrapper.append(tableSurface);
   let i = 0;
-  let levelText: string = nodeToText(levelParams[i].node);
+  let levelText = nodeToElement(levelParams[i].node);
   tableWrapper.innerHTML = levelText;
   table.append(tableWrapper);
 
@@ -19,14 +22,14 @@ export function htmlTable(): HTMLElement | null {
       if (i >= levelParams.length) {
         i = 0;
       }
-      levelText = nodeToText(levelParams[i].node);
+      levelText = nodeToElement(levelParams[i].node);
       tableWrapper.innerHTML = levelText;
     } else if ((event.target as HTMLElement).classList.contains('arrows__left')) {
       i -= 1;
       // if (i < 0) {
       //   i = levelParams.length - 1;
       // }
-      levelText = nodeToText(levelParams[i].node);
+      levelText = nodeToElement(levelParams[i].node);
       tableWrapper.innerHTML = levelText;
     }
     table.append(tableWrapper);

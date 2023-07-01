@@ -1,5 +1,5 @@
 import { levelParams } from "../taskField/levels";
-import { nodeToText } from "../nodeToString";
+import { nodeToString } from "../nodeToString";
 import { createElement } from "../../utills/createElement";
 
 export function htmlField(): HTMLElement | null {
@@ -9,7 +9,7 @@ export function htmlField(): HTMLElement | null {
   if (htmlEditor) {
     const layoutHTML = createElement('pre', 'layout');
     let i = 0;
-    let levelText: string = nodeToText(levelParams[i].node);
+    let levelText: string = nodeToString(levelParams[i].node);
     layoutHTML.textContent = levelText;
 
     arrows?.addEventListener('click', (event) => {
@@ -18,14 +18,14 @@ export function htmlField(): HTMLElement | null {
         if (i >= levelParams.length) {
           i = 0;
         }
-        levelText = nodeToText(levelParams[i].node);
+        levelText = nodeToString(levelParams[i].node);
         layoutHTML.textContent = levelText;
       } else if ((event.target as HTMLElement).classList.contains('arrows__left')) {
         i -= 1;
         // if (i < 0) {
         //   i = levelParams.length - 1;
         // }
-        levelText = nodeToText(levelParams[i].node);
+        levelText = nodeToString(levelParams[i].node);
         layoutHTML.textContent = levelText;
       }
     })
