@@ -8,7 +8,14 @@ const generateTask = (data: IDataTask[]): Task[] => {
   return tasksCards;
 }
 
-export const renderTask = (): void => {
+export const renderTasks = (): NodeListOf<HTMLDivElement> => {
   const taskWrapper = document.querySelector('.descr-wrapper');
   generateTask(dataTask).forEach((task) => taskWrapper?.append(task.generateTaskField()));
+  const allTasks: NodeListOf<HTMLDivElement> = document.querySelectorAll('.descrLevel');
+  return allTasks;
 }
+
+export const showTask = (currentLevel: number): void => {
+  const allTasks: NodeListOf<HTMLDivElement> = renderTasks();
+  allTasks[currentLevel].classList.add('active');
+} 

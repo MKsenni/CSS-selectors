@@ -13,45 +13,67 @@ export class Arrows {
     this.tasks = document.querySelectorAll('.descrLevel');
     this.levels = document.querySelectorAll('.level');
     this.arrows = document.querySelector('.arrows');
+    this.changeHeaderLevel(this.state.currentLevel);
+    this.changeTask(this.state.currentLevel);
   }
 
   public setState (): void {
     if (this.arrows) {
       this.arrows.addEventListener('click', (event) => {
-        (event.target as HTMLElement).classList.contains('arrows__right') ?
-        this.state.currentLevel += 1 :
-        (event.target as HTMLElement).classList.contains('arrows__left') ?
-        this.state.currentLevel -= 1 : null
-        console.log(this.state.currentLevel);
+        if ((event.target as HTMLElement).classList.contains('arrows__right')) {
+          if (this.state.currentLevel === 14) {
+            this.state.currentLevel = 0;
+          } else if (this.state.currentLevel < 14) {
+            this.state.currentLevel += 1;
+          }
+        } else if ((event.target as HTMLElement).classList.contains('arrows__left')) {
+          if (this.state.currentLevel === 0) {
+            this.state.currentLevel = 14;
+          } else if (this.state.currentLevel > 0) {
+            this.state.currentLevel -= 1;
+          }
+        }
       })
     }
   }
 
-  public changeHeaderLevel(): void {
+  public changeHeaderLevel(currentLevel: number): void {
     if (this.arrows) {
-      let i = 0;
-      let j = 0;
       this.arrows.addEventListener('click', (event) => {
         if ((event.target as HTMLElement).classList.contains('arrows__right')) {
-          this.tasks[i].style.display = 'none';
-          i += 1;
-          if (i >= this.tasks.length) i = 0;
-          this.tasks[i].style.display = 'flex';
-    
-          this.levels[j].style.display = 'none';
-          j += 1;
-          if (j >= this.levels.length) j = 0;
-          this.levels[j].style.display = 'flex';
+          this.levels[currentLevel].classList.remove('active');
+          currentLevel += 1;
+          if (currentLevel >= this.levels.length) currentLevel = 0;
+          this.levels[currentLevel].classList.add('active');
         } else if ((event.target as HTMLElement).classList.contains('arrows__left')) {
-          this.tasks[i].style.display = 'none';
-          i -= 1;
-          if (i < 0) i = this.tasks.length - 1;
-          this.tasks[i].style.display = 'flex';
-    
-          this.levels[j].style.display = 'none';
-          j -= 1;
-          if (j < 0) j = this.levels.length - 1;
-          this.levels[j].style.display = 'flex';
+          this.levels[currentLevel].classList.remove('active');
+          if (currentLevel <= 0) {
+            currentLevel = this.levels.length - 1
+          } else {
+            currentLevel -= 1;
+          }
+          this.levels[currentLevel].classList.add('active');
+        }
+      })
+    }
+  }
+
+  public changeTask(currentLevel: number): void {
+    if (this.arrows) {
+      this.arrows.addEventListener('click', (event) => {
+        if ((event.target as HTMLElement).classList.contains('arrows__right')) {
+          this.tasks[currentLevel].classList.remove('active');
+          currentLevel += 1;
+          if (currentLevel >= this.tasks.length) currentLevel = 0;
+          this.tasks[currentLevel].classList.add('active');
+        } else if ((event.target as HTMLElement).classList.contains('arrows__left')) {
+          this.tasks[currentLevel].classList.remove('active');
+          if (currentLevel <= 0) {
+            currentLevel = this.tasks.length - 1
+          } else {
+            currentLevel -= 1;
+          }
+          this.tasks[currentLevel].classList.add('active');
         }
       })
     }

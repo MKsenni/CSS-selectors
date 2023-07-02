@@ -12,18 +12,21 @@ interface Level {
 }
 
 const count: levels = 15;
-const levelsWrapper: HTMLElement | null = document.querySelector('.levels-wrapper');
 
-function createLevels(parent: HTMLElement, count: number): void {
+function renderLevels(count: number): NodeListOf<HTMLDivElement> {
+  const levelsWrapper = document.querySelector('.levels-wrapper');
   for (let i = 0; i < count; i += 1) {
     const level = createElement('span', 'level');
     level.textContent = `Level ${i + 1} of ${count} `;
-    parent.append(level);
+    levelsWrapper?.append(level);
   }
+  const allLevels: NodeListOf<HTMLDivElement> = document.querySelectorAll('.level');
+  return allLevels;
 }
 
-if (levelsWrapper) {
-  createLevels(levelsWrapper, count);
+export const showLevel = (currentLevel: number): void => {
+  const allLevels = renderLevels(count);
+  allLevels[currentLevel].classList.add('active');
 }
 
 export const levelParams: Level[] = [

@@ -26,7 +26,7 @@ interface ITask {
 
   public generateTaskField(): HTMLElement {
     let template = '';
-    const taslElement: HTMLElement = createElement('div', 'descrLevel');
+    const tasklElement: HTMLElement = createElement('div', 'descrLevel');
     // taslElement.setAttribute('data-id', this.id);
 
     this.title &&
@@ -44,7 +44,7 @@ interface ITask {
     this.example &&
     (template += `<h3>Examples</h3><span class="descrLevel__example">${this.example}</span>`);
 
-    taslElement.innerHTML = template;
-    return taslElement;
+    tasklElement.innerHTML = template;
+    return tasklElement;
   }
 }

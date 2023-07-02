@@ -2,30 +2,30 @@ import { levelParams } from "../taskField/levels";
 import { nodeToString } from "../nodeToString";
 import { createElement } from "../../utills/createElement";
 
-export function htmlField(): HTMLElement | null {
+export function htmlField(currentLevel: number): HTMLElement | null {
   const htmlEditor: HTMLElement | null = document.querySelector('.text-html');
   const arrows: HTMLElement | null = document.querySelector('.arrows');
 
   if (htmlEditor) {
     const layoutHTML = createElement('pre', 'layout');
-    let i = 0;
-    let levelText: string = nodeToString(levelParams[i].node);
+    let levelText: string = nodeToString(levelParams[currentLevel].node);
     layoutHTML.textContent = levelText;
 
     arrows?.addEventListener('click', (event) => {
       if ((event.target as HTMLElement).classList.contains('arrows__right')) {
-        i += 1;
-        if (i >= levelParams.length) {
-          i = 0;
+        currentLevel += 1;
+        if (currentLevel >= levelParams.length) {
+          currentLevel = 0;
         }
-        levelText = nodeToString(levelParams[i].node);
+        levelText = nodeToString(levelParams[currentLevel].node);
         layoutHTML.textContent = levelText;
       } else if ((event.target as HTMLElement).classList.contains('arrows__left')) {
-        i -= 1;
-        // if (i < 0) {
-        //   i = levelParams.length - 1;
-        // }
-        levelText = nodeToString(levelParams[i].node);
+        if (currentLevel <= 0) {
+          currentLevel = levelParams.length - 1;
+        } else {
+          currentLevel -= 1;
+        }
+        levelText = nodeToString(levelParams[currentLevel].node);
         layoutHTML.textContent = levelText;
       }
     })

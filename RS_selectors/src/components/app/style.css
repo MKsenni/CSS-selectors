@@ -132,7 +132,8 @@ html {
   border-radius: 7px;
 }
 
-.enter {
+.enter,
+.reset {
   position: relative;
   top: 3px;
   right: 3px;
@@ -210,28 +211,34 @@ html {
 }
 
 .task-field__wrapper {
+  height: 100%;
   width: 100%;
 }
 
 .levels-wrapper {
   display: flex;
+  position: relative;
   gap: 10px;
-  width: 110px;
   height: 24px;
+  width: 110px;
   overflow: hidden;
 }
 
 .level {
+  position: absolute;
+  top: 0;
+  left: 0;
   flex-shrink: 0;
   margin: 5px 0px 5px 5px;
+  opacity: 0;
   cursor: pointer;
 }
 
 .descr-wrapper {
-  /* width: 500px;
-  height: 300px;
-  position: relative; */
+  position: relative;
   display: flex;
+  height: 100%;
+  width: 100%;
   overflow: hidden;
 }
 
@@ -244,11 +251,10 @@ html {
   padding: 5px;
   width: 100%;
   height: 100%;
-  /* position: absolute;
+  position: absolute;
   top: 0;
   left: 0;
   opacity: 0;
-  transition: opacity 0.5s ease; */
 }
 
 .active {
