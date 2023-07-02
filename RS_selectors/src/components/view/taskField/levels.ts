@@ -37,15 +37,20 @@ export const levelParams: Level[] = [
     node: 
       new TreeNode(
         Tags.TABLE,
+        undefined,
         false,
         [
           new TreeNode(
             Tags.PLATE,
+            {datatooltip: '<plate/>'},
             true,
+            undefined,
           ),
           new TreeNode(
             Tags.PLATE,
+            {datatooltip: '<plate/>'},
             true,
+            undefined,
           ),
         ]
       ),
@@ -57,15 +62,20 @@ export const levelParams: Level[] = [
     node: 
       new TreeNode(
         Tags.TABLE,
+        undefined,
         false, 
         [
           new TreeNode(
             Tags.COFFEE,
+            {datatooltip: '<coffee />'},
             true,
+            undefined,
           ),
           new TreeNode(
             Tags.PLATE,
+            {datatooltip: '<plate />'},
             false,
+            undefined,
           ),
         ]
       ),
@@ -77,19 +87,26 @@ export const levelParams: Level[] = [
     node: 
       new TreeNode(
         Tags.TABLE,
+        undefined,
         false, 
           [
             new TreeNode(
               Tags.CROISSANT,
+              undefined,
               false,
+              undefined,
             ),
             new TreeNode(
               Tags.COFFEE,//#with-milk
+              {id: 'with-milk', datatooltip: '<coffee id="with-milk"/>'},
               true,
+              undefined,
             ),
             new TreeNode(
               Tags.COFFEE,
+              {datatooltip: '<coffee />'},
               false,
+              undefined,
             ),
           ]
       ),
@@ -101,25 +118,32 @@ export const levelParams: Level[] = [
     node: 
       new TreeNode(
         Tags.TABLE,
+        undefined,
         false, 
           [
             new TreeNode(
               Tags.COFFEE,
+              {datatooltip: '<coffee />'},
               false,
+              undefined,
             ),
             new TreeNode(
               Tags.PLATE,
+              {datatooltip: '<plate></plate>'},
               false,
               [
                 new TreeNode(
                   Tags.TOAST,
+                  {datatooltip: '<toast/>'},
                   true,
                 ),
               ]
             ),
             new TreeNode(
               Tags.CROISSANT,
+              undefined,
               false,
+              undefined,
             ),
           ]
       ),
@@ -131,29 +155,38 @@ export const levelParams: Level[] = [
     node: 
       new TreeNode(
         Tags.TABLE,
+        undefined,
         false, 
           [
             new TreeNode(
               Tags.COFFEE,
+              {datatooltip: '<coffee />'},
               false,
+              undefined,
             ),
             new TreeNode(
               Tags.PLATE,//#green
+              {id: 'green', datatooltip: '<plate></plate>'},
               false,
               [
                 new TreeNode(
                   Tags.EGGS,//.boiled
+                  {class: 'boiled', datatooltip: '<eggsclas="boiled"/>'},
                   true,
+                  undefined,
                 ),
               ]
             ),
             new TreeNode(
               Tags.PLATE,
+              {datatooltip: '<plate />'},
               false,
               [
                 new TreeNode(
                   Tags.CROISSANT,
+                  undefined,
                   false,
+                  undefined,
                 ),
               ]
             ),
@@ -167,23 +200,31 @@ export const levelParams: Level[] = [
     node: 
       new TreeNode(
         Tags.TABLE,
+        undefined,
         false, 
           [
             new TreeNode(
               Tags.EGGS,//.boiled
-              false,
+              {class: 'boiled', datatooltip: '<eggs class="boiled" />'},
+              true,
+              undefined,
             ),
             new TreeNode(
               Tags.COFFEE,
-              true,
+              {datatooltip: '<coffee />'},
+              false,
+              undefined,
             ),
             new TreeNode(
               Tags.PLATE,
+              {datatooltip: '<plate></plate>'},
               false,
               [
                 new TreeNode(
                   Tags.EGGS,//.boiled
+                  {class: 'boiled', datatooltip: '<eggs class="boiled" />'},
                   true,
+                  undefined,
                 ),
               ]
             ),
@@ -192,44 +233,56 @@ export const levelParams: Level[] = [
   },
   {
     level: 7,
-    answer: 'eggs .fried',
+    answer: 'eggs.fried',
     task: TaskLevel.TASK7,
     node: 
       new TreeNode(
         Tags.TABLE,
+        undefined,
         false, 
           [
             new TreeNode(
               Tags.COFFEE,
+              {datatooltip: '<cooffee />'},
               false,
+              undefined,
             ),
             new TreeNode(
               Tags.PLATE,
+              {datatooltip: '<plate></plate>'},
               false,
               [
                 new TreeNode(
                   Tags.EGGS,//.fried
+                  {class: 'fired', datatooltip: '<eggsclass="fired" />'},
                   true,
+                  undefined,
                 ),
               ]
             ),
             new TreeNode(
               Tags.PLATE,
+              {datatooltip: '<plate></plate>'},
               false,
               [
                 new TreeNode(
                   Tags.REDHOT,//.fried
+                  {class: 'fired', datatooltip: '<redhot class="fired" />'},
                   false,
+                  undefined,
                 ),
               ]
             ),
             new TreeNode(
               Tags.PLATE,
+              {datatooltip: '<plate></plate>'},
               false,
               [
                 new TreeNode(
                   Tags.EGGS,//.fried
+                  {class: 'fired', datatooltip: '<redhot class="fired" />'},
                   true,
+                  undefined,
                 ),
               ]
             ),
@@ -243,29 +296,38 @@ export const levelParams: Level[] = [
     node: 
       new TreeNode(
         Tags.TABLE,
+        undefined,
         false, 
           [
             new TreeNode(
               Tags.COFFEE,
+              {datatooltip: '<cooffee />'},
               true,
+              undefined,
             ),
             new TreeNode(
               Tags.PLATE,
+              {datatooltip: '<plate></plate>'},
               true,
               [
                 new TreeNode(
                   Tags.CROISSANT,
+                  undefined,
                   true,
+                  undefined,
                 ),
               ]
             ),
             new TreeNode(
               Tags.PLATE,
+              {datatooltip: '<plate></plate>'},
               false,
               [
                 new TreeNode(
                   Tags.TOAST,
+                  {datatooltip: '<toast />'},
                   false,
+                  undefined,
                 ),
               ]
             ),
@@ -279,33 +341,44 @@ export const levelParams: Level[] = [
     node: 
       new TreeNode(
         Tags.TABLE,
+        undefined,
         false, 
           [
             new TreeNode(
               Tags.APPLE,
+              {datatooltip: '<apple />'},
               true,
+              undefined,
             ),
             new TreeNode(
               Tags.COFFEE,
+              {datatooltip: '<coffee />'},
               true,
+              undefined,
             ),
             new TreeNode(
               Tags.PLATE,
+              {datatooltip: '<plate></plate>'},
               true,
               [
                 new TreeNode(
                   Tags.REDHOT,
+                  undefined,
                   true,
+                  undefined,
                 ),
               ]
             ),
             new TreeNode(
               Tags.PLATE,
+              {datatooltip: '<plate></plate>'},
               true,
               [
                 new TreeNode(
                   Tags.CROISSANT,
+                  undefined,
                   true,
+                  undefined,
                 ),
               ]
             ),
@@ -319,29 +392,38 @@ export const levelParams: Level[] = [
     node: 
       new TreeNode(
         Tags.TABLE,
+        undefined,
         false, 
           [
             new TreeNode(
               Tags.PLATE,
+              {datatooltip: '<plate></plate>'},
               true,
               [
                 new TreeNode(
                   Tags.TOAST,
+                  {datatooltip: '<toast />'},
                   true,
+                  undefined,
                 ),
               ]
             ),
             new TreeNode(
               Tags.CROISSANT,
+              undefined,
               false,
+              undefined,
             ),
             new TreeNode(
               Tags.PLATE,
+              {datatooltip: '<plate></plate>'},
               true,
               [
                 new TreeNode(
                   Tags.EGGS, //.fried
+                  {class: 'fired', datatooltip: '<eggs class="fired" />'},
                   true,
+                  undefined,
                 ),
               ]
             ),
@@ -355,23 +437,32 @@ export const levelParams: Level[] = [
     node: 
       new TreeNode(
         Tags.TABLE,
+        undefined,
         false, 
           [
             new TreeNode(
               Tags.COOKIE,//.big
+              {class: 'big', datatooltip: '<eggs cookie="big" />'},
               true,
+              undefined,
             ),
             new TreeNode(
               Tags.COFFEE,
+              {datatooltip: '<coffee />'},
               true,
+              undefined,
             ),
             new TreeNode(
               Tags.COOKIE,//.small
+              {class: 'small', datatooltip: '<cookie class="small" />'},
               true,
+              undefined,
             ),
             new TreeNode(
               Tags.ORANGE,
+              {datatooltip: '<orange />'},
               false,
+              undefined,
             ),
           ]
       ),
@@ -383,27 +474,37 @@ export const levelParams: Level[] = [
     node: 
       new TreeNode(
         Tags.TABLE,
+        undefined,
         false, 
           [
             new TreeNode(
               Tags.COFFEE,
+              {datatooltip: '<coffee />'},
               false,
+              undefined,
             ),
             new TreeNode(
               Tags.COOKIE,//.small
+              {class: 'small', datatooltip: '<cookie class="small" />'},
               true,
+              undefined,
             ),
             new TreeNode(
               Tags.COOKIE,//.big
+              {class: 'big', datatooltip: '<cookie class="big" />'},
               true,
+              undefined,
             ),
             new TreeNode(
               Tags.PLATE,
+              {datatooltip: '<plate></plate>'},
               false,
               [
                 new TreeNode(
                   Tags.COOKIE, //.small
+                  {class: 'small', datatooltip: '<cookie class="small" />'},
                   false,
+                  undefined,
                 ),
               ]
             ),
@@ -417,19 +518,24 @@ export const levelParams: Level[] = [
     node: 
       new TreeNode(
         Tags.TABLE,
+        undefined,
         false, 
           [
             new TreeNode(
               Tags.PLATE,
+              {datatooltip: '<plate />'},
               false,
               [
                 new TreeNode(
                   Tags.TOAST,
+                  {datatooltip: '<toast></toast>'},
                   false,
                   [
                     new TreeNode(
                       Tags.EGGS, //.fired
+                      {class: 'fired', datatooltip: '<eggs class="fired" />'},
                       false,
+                      undefined,
                     ),
                   ]
                 ),
@@ -437,17 +543,22 @@ export const levelParams: Level[] = [
             ),
             new TreeNode(
               Tags.PLATE,
+              {datatooltip: '<plate></plate>'},
               true,
               [
                 new TreeNode(
                   Tags.EGGS, //.fired
+                  {class: 'fired', datatooltip: '<eggs class="fired" />'},
                   true,
+                  undefined,
                 ),
               ]
             ),
             new TreeNode(
               Tags.COFFEE,
+              {datatooltip: '<coffee />'},
               false,
+              undefined,
             ),
           ]
       ),
@@ -459,29 +570,39 @@ export const levelParams: Level[] = [
     node: 
       new TreeNode(
         Tags.TABLE,
+        undefined,
         false, 
           [
             new TreeNode(
               Tags.PLATE,
+              {datatooltip: '<plate></plate>'},
               false,
               [
                 new TreeNode(
                   Tags.COOKIE,//.small
+                  {class: 'small', datatooltip: '<cookie class="small" />'},
                   true,
+                  undefined,
                 ),
                 new TreeNode(
                   Tags.COOKIE,//.small
+                  {class: 'small', datatooltip: '<cookie class="small" />'},
                   false,
+                  undefined,
                 ),
                 new TreeNode(
                   Tags.COOKIE,//.small
+                  {class: 'small', datatooltip: '<cookie class="small" />'},
                   false,
+                  undefined,
                 ),
               ],
             ),
             new TreeNode(
               Tags.COFFEE,
+              {datatooltip: '<coffee />'},
               false,
+              undefined,
             ),
           ]
       ),
@@ -493,29 +614,38 @@ export const levelParams: Level[] = [
     node: 
       new TreeNode(
         Tags.TABLE,
+        undefined,
         false, 
           [
             new TreeNode(
               Tags.TOAST,
+              {datatooltip: '<toast></toast>'},
               false,
               [
                 new TreeNode(
                 Tags.REDHOT, //.fired
+                {class: 'fired', datatooltip: '<redhot class="fired" />'},
                 true,
+                undefined,
                 ),
               ]
             ),
             new TreeNode(
               Tags.COFFEE,
+              {datatooltip: '<coffee />'},
               false,
+              undefined,
             ),
             new TreeNode(
               Tags.PLATE,
+              {datatooltip: '<plate></plate>'},
               false,
               [
                 new TreeNode(
                   Tags.EGGS, //.fired
+                  {class: 'fired', datatooltip: '<eggs class="fired" />'},
                   true,
+                  undefined,
                 ),
               ]
             ),

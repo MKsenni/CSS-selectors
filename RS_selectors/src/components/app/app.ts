@@ -1,4 +1,5 @@
 import { Arrows } from '../controllers/arrows/Arrows';
+import { checkAnswer } from '../controllers/conroller';
 import { getLocalStorage, setLocalStorage } from '../controllers/localStorage/localStorage';
 import { state } from '../model/state';
 import { viewLevel } from '../view/view';
@@ -10,12 +11,11 @@ export const appLoadGame = (): void => {
     viewLevel(state.currentLevel);
     const arrows = new Arrows(state);
     arrows.setState();
+    checkAnswer();
     // arrows.changeHeaderLevel(state.currentLevel);
     // arrows.changeTask(state.currentLevel);
   })
 }
-
-
 
 export const beforeUnloadGame = (): void => {
   window.addEventListener('beforeunload', () => {

@@ -79,19 +79,18 @@ html {
 }
 
 .play-field__table {
-  transform: translate3d(0,0,0);
-  perspective: 400px;
-  text-align: center;
   position: relative;
-
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
   height: 40%;
   width: 90%;
   margin: 0 auto;
+  perspective: 400px;
+  text-align: center;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
   /* background-color: rgb(217 238 241 / 85%); */
   /* border-radius: 7px; */
+  transform: translate3d(0,0,0);
 }
 
 .table-wrapper {
@@ -325,6 +324,7 @@ plate {
   border-radius: 100px;
   background: white;
   box-shadow: 0px 8px 0px rgba(0,0,0,.1);
+  cursor: pointer;
 }
 
 plate::before {
@@ -341,11 +341,38 @@ plate::before {
   background: rgba(255,255,255,1);
 }
 
+plate#green {
+  display: inline-block;
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 0 10px;
+  border-bottom: solid 5px #537c4a;
+  border-radius: 100px;
+  background: rgb(85, 195, 115);
+  box-shadow: 0px 8px 0px rgba(0,0,0,.1);
+  cursor: pointer;
+}
+
+plate#green::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: calc(50% - 47px);
+  top: calc(50% - 47px);
+  height: 95px;
+  width: 95px;
+  border-radius: 60px;
+  border-top: solid 6px #CCC;
+  opacity: 0.4;
+  background: rgb(85, 195, 115);
+}
+
 pre {
   font-family: 'Rum Raisin', sans-serif;
 }
 
-cookie {
+cookie.small {
   display: inline-block;
   position: relative;
   /* top: calc(50% - 15px);
@@ -359,9 +386,10 @@ cookie {
   border-color: #4f250d;
   box-shadow: 0px 5px 0px rgba(0,0,0,.2);
   background: #873d12;
+  cursor: pointer;
 }
 
-cookie::before {
+cookie.small::before {
   content: "";
   display: block;
   position: absolute;
@@ -373,7 +401,7 @@ cookie::before {
   background-color: black;
 }
 
-cookie::after {
+cookie.small::after {
   content: "";
   display: block;
   position: absolute;
@@ -385,10 +413,54 @@ cookie::after {
   background-color: black;
 }
 
+cookie.big {
+  display: inline-block;
+  position: relative;
+  /* top: calc(50% - 15px);
+  left: calc(50% - 15px); */
+  height: 60px;
+  width: 60px;
+  margin: 0;
+  border-radius: 100px;
+  border-style: solid;
+  border-width: 2px 4px 8px 4px ;
+  border-color: #4f250d;
+  box-shadow: 0px 5px 0px rgba(0,0,0,.2);
+  background: #873d12;
+  cursor: pointer;
+}
+
+cookie.big::before {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 13px;
+  bottom: 12px;
+  height: 5px;
+  width: 5px;
+  border-radius: 3px;
+  background-color: black;
+}
+
+cookie.big::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  height: 5px;
+  width: 5px;
+  border-radius: 3px;
+  background-color: black;
+}
+
 tablecloth {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  width: 75%;
+  height: 90%;
+  margin-top: calc(50% - width);
   /* transform-style: preserve-3d;
   outline: solid 1px transparent;
   margin: 0px auto 0px auto;
@@ -406,10 +478,12 @@ tablecloth {
   background-image: url('../../asset/image/tablecloses.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  width: 86%;
-  height: 90%;
-  margin-top: calc(50% - width);;
+  cursor: pointer;
 }
+
+/* tablecloth * {
+
+} */
 
 coffee {
   position: relative;
@@ -422,8 +496,9 @@ coffee {
   display: inline-block;
   background: #493518;
   border-color: #e3dcd3;
-  transition: transform ease-out .2s;
+  /* transition: transform ease 1s; */
   z-index: 1000;
+  cursor: pointer;
 }
 
 coffee::before {
@@ -454,8 +529,8 @@ croissant {
   display: inline-block;
   background: orange;
   border-color: #bd6e07;
-  transition: transform ease-out .2s;
-  rotate: -45deg;
+  /* transition: transform ease-out .2s; */
+  cursor: pointer;
 }
 
 croissant::before {
@@ -496,7 +571,7 @@ croissant::after {
 }
 
 eggs,
-eggs .boiled {
+eggs.boiled {
   display: inline-block;
   position: relative;
   top: 25px;
@@ -512,11 +587,12 @@ eggs .boiled {
   box-shadow: 0px 5px 0px rgba(0,0,0,.2);
   background: #ececda;
   border-color: #e2dfd7;
-  transition: transform ease-out .2s;
+  /* transition: transform ease-out .2s; */
+  cursor: pointer;
 }
 
 eggs::before,
-eggs .boiled::before {
+eggs.boiled::before {
   content: "";
   display: block;
   position: absolute;
@@ -528,7 +604,7 @@ eggs .boiled::before {
   border-radius: 100px;
 }
 
-eggs .fired {
+eggs.fired {
   display: inline-block;
   position: absolute;
   top: calc(50% - 35px);
@@ -542,10 +618,11 @@ eggs .fired {
   box-shadow: 0px 5px 0px rgba(0,0,0,.2);
   background: #ececda;
   border-color: #e2dfd7;
-  transition: transform ease-out .2s;
+  /* transition: transform ease-out .2s; */
+  cursor: pointer;
 }
 
-eggs .fired::before {
+eggs.fired::before {
   content: "";
   display: block;
   position: absolute;
@@ -574,7 +651,8 @@ toast {
   background: #e9cb93;
   border-color: #965909;
   z-index: 300;
-  transition: transform ease-out .2s;
+  /* transition: transform ease-out .2s; */
+  cursor: pointer;
 }
 
 toast::before {
@@ -603,7 +681,8 @@ orange {
   background: orange;
   border-color: #bd6e07;
   z-index: 300;
-  transition: transform ease-out .2s;
+  /* transition: transform ease-out .2s; */
+  cursor: pointer;
 }
 
 orange::before {
@@ -632,7 +711,8 @@ apple {
   background: #7cd53d;
   border-color: #60a92d;
   z-index: 300;
-  transition: transform ease-out .2s;
+  /* transition: transform ease-out .2s; */
+  cursor: pointer;
 }
 
 apple::before {
@@ -659,8 +739,8 @@ redhot {
   border: solid 2px #d36519;
   border-width: 2px 2px 6px 2px;
   box-shadow: 4px 3px 0px rgba(0, 0, 0, 0.2);
-  transition: transform ease-out .2s;
-  rotate: 45deg;
+  /* transition: transform ease-out .2s; */
+  cursor: pointer;
 }
 
 redhot::before {
@@ -689,7 +769,7 @@ redhot::after {
   rotate: 90deg;
 }
 
-coffee #with-milk{
+coffee#with-milk {
   position: relative;
   border-radius: 100px;
   border-style: solid;
@@ -700,8 +780,9 @@ coffee #with-milk{
   display: inline-block;
   background: #e1af62;
   border-color: #e3dcd3;
-  transition: transform ease-out .2s;
+  /* transition: transform ease-out .2s; */
   z-index: 1000;
+  cursor: pointer;
 }
 
 coffee #with-milk::before {
@@ -714,4 +795,99 @@ coffee #with-milk::before {
   top: 17px;
   left: calc(50% - -50%);
   border-radius: 112px;
+}
+
+plate > cookie.small {
+  top: 60px;
+}
+
+plate > eggs.fired {
+  top: 2px;
+}
+
+toast > redhot.fired {
+  top: -38px;
+}
+
+plate > toast {
+  top: 36px;
+}
+
+toast > eggs.fired {
+  top: calc(50% - 59px);
+  left: calc(50% - 40px);
+}
+
+plate > croissant {
+  top: 50px;
+}
+
+[data-tooltip] {
+  position: relative; /*Относительное позиционирование */
+}
+
+[data-tooltip]::after {
+  content: attr(data-tooltip); /* Выводим текст */
+  position: absolute; /*Абсолютное позиционирование*/
+  width: 300px; /*Ширина подсказки*/
+  right: -6rem; 
+  top: 0; /*Положение подсказки*/
+  /* background: #3989c9; Синий цвет фона */
+  color: rgb(46, 25, 3); /* Цвет текста */
+  padding: -3rem; /* Поля вокруг текста */
+  /* box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); Параметры тени */
+  pointer-events: none; /* Подсказка */
+  opacity: 0; /* Подсказка невидима */
+  transition: 1s; /* Время появления подсказки */
+}
+
+[data-tooltip]:hover::after {
+  opacity: 1; /* Показываем подсказку */
+  top: -5rem; /* Положение подсказки */
+}
+
+.right {
+  animation: myAnimTarget 1s ease 0s infinite normal forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes myAnimTarget {
+	0% {
+		transform: translateY(0px);
+	}
+	100% {
+		transform: translateY(-20px);
+	}
+}
+
+.wrongAnswer {
+  animation: myAnimWrong 1s ease-in 0s 1 normal forwards;
+}
+
+@keyframes myAnimWrong {
+	0%,
+	100% {
+		transform: translateX(0);
+	}
+
+	10%,
+	30%,
+	50%,
+	70% {
+		transform: translateX(-10px);
+	}
+
+	20%,
+	40%,
+	60% {
+		transform: translateX(10px);
+	}
+
+	80% {
+		transform: translateX(8px);
+	}
+
+	90% {
+		transform: translateX(-8px);
+	}
 }
