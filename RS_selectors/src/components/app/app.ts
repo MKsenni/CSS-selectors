@@ -1,7 +1,8 @@
 import { Arrows } from '../controllers/arrows/Arrows';
-import { checkAnswer } from '../controllers/conroller';
+import { checkAnswer, wrongAnswerAnimation } from '../controllers/conroller';
 import { getLocalStorage, setLocalStorage } from '../controllers/localStorage/localStorage';
 import { state } from '../model/state';
+import { useBurger } from '../controllers/burgerMenu/burgerList';
 import { viewLevel } from '../view/view';
 import './style.css';
 
@@ -12,9 +13,9 @@ export const appLoadGame = (): void => {
     const arrows = new Arrows(state);
     arrows.setState();
     checkAnswer();
-    // arrows.changeHeaderLevel(state.currentLevel);
-    // arrows.changeTask(state.currentLevel);
+    useBurger();
   })
+  wrongAnswerAnimation();
 }
 
 export const beforeUnloadGame = (): void => {

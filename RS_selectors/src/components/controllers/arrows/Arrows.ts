@@ -7,12 +7,14 @@ export class Arrows {
   public tasks: NodeListOf<HTMLDivElement>;
   public levels: NodeListOf<HTMLDivElement>;
   public arrows: HTMLElement | null;
+  public input: HTMLInputElement | null;
 
   constructor (state: IState) {
     this.state = state;
     this.tasks = document.querySelectorAll('.descrLevel');
     this.levels = document.querySelectorAll('.level');
     this.arrows = document.querySelector('.arrows');
+    this.input = document.querySelector('.input-css');
     this.changeHeaderLevel(this.state.currentLevel);
     this.changeTask(this.state.currentLevel);
   }
@@ -20,6 +22,7 @@ export class Arrows {
   public setState (): void {
     if (this.arrows) {
       this.arrows.addEventListener('click', (event) => {
+        this.clearInput();
         if ((event.target as HTMLElement).classList.contains('arrows__right')) {
           if (this.state.currentLevel === 14) {
             this.state.currentLevel = 0;
@@ -76,6 +79,12 @@ export class Arrows {
           this.tasks[currentLevel].classList.add('active');
         }
       })
+    }
+  }
+
+  private clearInput(): void {
+    if (this.input) {
+      this.input.value = '';
     }
   }
 }

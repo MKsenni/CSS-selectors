@@ -15,10 +15,12 @@ const count: levels = 15;
 
 function renderLevels(count: number): NodeListOf<HTMLDivElement> {
   const levelsWrapper = document.querySelector('.levels-wrapper');
+  // const levelsBurger = document.querySelector('.burger__menu');
   for (let i = 0; i < count; i += 1) {
     const level = createElement('span', 'level');
     level.textContent = `Level ${i + 1} of ${count} `;
     levelsWrapper?.append(level);
+    // levelsBurger?.append(level);
   }
   const allLevels: NodeListOf<HTMLDivElement> = document.querySelectorAll('.level');
   return allLevels;
@@ -27,6 +29,11 @@ function renderLevels(count: number): NodeListOf<HTMLDivElement> {
 export const showLevel = (currentLevel: number): void => {
   const allLevels = renderLevels(count);
   allLevels[currentLevel].classList.add('active');
+}
+
+export const hiddenLevel = (currentLevel: number): void => {
+  const allLevels = renderLevels(count);
+  allLevels[currentLevel].classList.remove('active');
 }
 
 export const levelParams: Level[] = [
@@ -233,7 +240,7 @@ export const levelParams: Level[] = [
   },
   {
     level: 7,
-    answer: 'eggs.fried',
+    answer: 'eggs.fired',
     task: TaskLevel.TASK7,
     node: 
       new TreeNode(
@@ -432,7 +439,7 @@ export const levelParams: Level[] = [
   },
   {
     level: 11,
-    answer: 'cooffee + cookie',
+    answer: 'coffee + cookie',
     task: TaskLevel.TASK10,
     node: 
       new TreeNode(
@@ -469,7 +476,7 @@ export const levelParams: Level[] = [
   },
   {
     level: 12,
-    answer: 'cooffee ~ cookie',
+    answer: 'coffee ~ cookie',
     task: TaskLevel.TASK10,
     node: 
       new TreeNode(
@@ -609,7 +616,7 @@ export const levelParams: Level[] = [
   },
   {
     level: 15,
-    answer: '.fired:last-class',
+    answer: '.fired:last-child',
     task: TaskLevel.TASK10,
     node: 
       new TreeNode(

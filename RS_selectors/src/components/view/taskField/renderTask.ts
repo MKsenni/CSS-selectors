@@ -3,7 +3,7 @@ import { Task } from "./Task";
 
 export const tasksCards: Task[] = [];
 
-const generateTask = (data: IDataTask[]): Task[] => {
+export const generateTask = (data: IDataTask[]): Task[] => {
   data.forEach((task) => tasksCards.push(new Task(task)));
   return tasksCards;
 }
@@ -18,4 +18,10 @@ export const renderTasks = (): NodeListOf<HTMLDivElement> => {
 export const showTask = (currentLevel: number): void => {
   const allTasks: NodeListOf<HTMLDivElement> = renderTasks();
   allTasks[currentLevel].classList.add('active');
-} 
+  console.log('1');
+}
+
+export const hiddenTask = (currentLevel: number): void => {
+  const allTasks: NodeListOf<HTMLDivElement> = renderTasks();
+  allTasks[currentLevel].classList.remove('active');
+}
