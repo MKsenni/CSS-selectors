@@ -30,7 +30,7 @@ module.exports = {
       template: path.resolve(__dirname, 'src', 'index.html'),
     }),
     new MiniCssExtractPlugin({
-      filename: '[name][hash][ext]',
+      filename: '[name][hash].css',
     }),
     new EslintPlugin({ 
       extensions: 'ts'
@@ -111,7 +111,7 @@ module.exports = {
         ],
         type: 'asset/resource',
         generator: {
-          filename: 'image/[name][ext]',
+          filename: 'image/[name].ext',
         },
       },
       {

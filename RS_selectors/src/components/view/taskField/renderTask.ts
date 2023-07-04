@@ -18,10 +18,20 @@ export const renderTasks = (): NodeListOf<HTMLDivElement> => {
 export const showTask = (currentLevel: number): void => {
   const allTasks: NodeListOf<HTMLDivElement> = renderTasks();
   allTasks[currentLevel].classList.add('active');
-  console.log('1');
 }
 
 export const hiddenTask = (currentLevel: number): void => {
   const allTasks: NodeListOf<HTMLDivElement> = renderTasks();
   allTasks[currentLevel].classList.remove('active');
+}
+
+export const generateTasks = (): void => {
+  const taskWrapper = document.querySelector('.descr-wrapper');
+  generateTask(dataTask).forEach((task) => taskWrapper?.append(task.generateTaskField()));
+}
+
+export const removeAllTasks = (): void => {
+  console.log('removeAll');
+  const taskWrapper = document.querySelector('.descr-wrapper');
+  taskWrapper?.replaceChildren();
 }

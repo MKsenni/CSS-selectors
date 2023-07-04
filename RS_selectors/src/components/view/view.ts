@@ -4,6 +4,8 @@ import { showLevel } from "./taskField/levels";
 import { showTask } from "./taskField/renderTask";
 
 export function viewLevel (currentLevel: number): void {
+  console.log('view');
+  
   htmlField(currentLevel);
   htmlTable(currentLevel);
   showLevel(currentLevel)
