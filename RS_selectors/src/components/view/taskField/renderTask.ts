@@ -8,27 +8,27 @@ export const generateTask = (data: IDataTask[]): Task[] => {
   return tasksCards;
 }
 
-export const renderTasks = (): NodeListOf<HTMLDivElement> => {
+export const renderTasks = (): void => {
   const taskWrapper = document.querySelector('.descr-wrapper');
   generateTask(dataTask).forEach((task) => taskWrapper?.append(task.generateTaskField()));
-  const allTasks: NodeListOf<HTMLDivElement> = document.querySelectorAll('.descrLevel');
-  return allTasks;
+  // return allTasks;
 }
 
 export const showTask = (currentLevel: number): void => {
-  const allTasks: NodeListOf<HTMLDivElement> = renderTasks();
+  const allTasks: NodeListOf<HTMLDivElement> = document.querySelectorAll('.descrLevel');
+  // const allTasks: NodeListOf<HTMLDivElement> = renderTasks();
   allTasks[currentLevel].classList.add('active');
 }
 
 export const hiddenTask = (currentLevel: number): void => {
-  const allTasks: NodeListOf<HTMLDivElement> = renderTasks();
+  const allTasks: NodeListOf<HTMLDivElement> = document.querySelectorAll('.descrLevel');
   allTasks[currentLevel].classList.remove('active');
 }
 
-export const generateTasks = (): void => {
-  const taskWrapper = document.querySelector('.descr-wrapper');
-  generateTask(dataTask).forEach((task) => taskWrapper?.append(task.generateTaskField()));
-}
+// export const generateTasks = (): void => {
+//   const taskWrapper = document.querySelector('.descr-wrapper');
+//   generateTask(dataTask).forEach((task) => taskWrapper?.append(task.generateTaskField()));
+// }
 
 export const removeAllTasks = (): void => {
   console.log('removeAll');

@@ -29,38 +29,38 @@
 //   public previousStep() {}
 // }
 
-export function arrows(): void {
-  const tasks: NodeListOf<HTMLDivElement> = document.querySelectorAll('.descrLevel');
-  const levels: NodeListOf<HTMLDivElement> = document.querySelectorAll('.level');
-  const arrows = document.querySelector('.arrows');
+// export function arrows(): void {
+//   const tasks: NodeListOf<HTMLDivElement> = document.querySelectorAll('.descrLevel');
+//   const levels: NodeListOf<HTMLDivElement> = document.querySelectorAll('.level');
+//   const arrows = document.querySelector('.arrows');
 
-  let i = 0;
-  let j = 0;
+//   let i = 0;
+//   let j = 0;
 
-  arrows?.addEventListener('click', (event) => {
-    if ((event.target as HTMLElement).classList.contains('arrows__right')) {
-      tasks[i].style.display = 'none';
-      i += 1;
-      if (i >= tasks.length) i = 0;
-      tasks[i].style.display = 'flex';
+//   arrows?.addEventListener('click', (event) => {
+//     if ((event.target as HTMLElement).classList.contains('arrows__right')) {
+//       tasks[i].style.display = 'none';
+//       i += 1;
+//       if (i >= tasks.length) i = 0;
+//       tasks[i].style.display = 'flex';
 
-      levels[j].style.display = 'none';
-      j += 1;
-      if (j >= levels.length) j = 0;
-      levels[j].style.display = 'flex';
-    } else if ((event.target as HTMLElement).classList.contains('arrows__left')) {
-      tasks[i].style.display = 'none';
-      i -= 1;
-      if (i < 0) i = tasks.length - 1;
-      tasks[i].style.display = 'flex';
+//       levels[j].style.display = 'none';
+//       j += 1;
+//       if (j >= levels.length) j = 0;
+//       levels[j].style.display = 'flex';
+//     } else if ((event.target as HTMLElement).classList.contains('arrows__left')) {
+//       tasks[i].style.display = 'none';
+//       i -= 1;
+//       if (i < 0) i = tasks.length - 1;
+//       tasks[i].style.display = 'flex';
 
-      levels[j].style.display = 'none';
-      j -= 1;
-      if (j < 0) j = levels.length - 1;
-      levels[j].style.display = 'flex';
-    }
-  })
-}
+//       levels[j].style.display = 'none';
+//       j -= 1;
+//       if (j < 0) j = levels.length - 1;
+//       levels[j].style.display = 'flex';
+//     }
+//   })
+// }
 
 // nextArrow?.addEventListener('click', () => {
 //   tasks[i].style.display = 'none';

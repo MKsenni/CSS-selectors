@@ -10,8 +10,7 @@ export const appLoadGame = (): void => {
   window.addEventListener('load', () => {
     getLocalStorage();
     viewLevel(state.currentLevel);
-    const arrows = new Arrows(state);
-    arrows.setState();
+    new Arrows(state);
     checkAnswer();
     useBurger();
   })

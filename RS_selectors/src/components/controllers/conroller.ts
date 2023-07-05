@@ -1,8 +1,9 @@
 import { state } from "../model/state";
-import { hiddenLevel, levelParams } from "../view/taskField/levels";
-import { removeAllTasks } from "../view/taskField/renderTask";
-// import { hiddenTask } from "../view/taskField/renderTask";
-import { viewLevel } from "../view/view";
+import { clearHTML, htmlField } from "../view/htmlField/htmlField";
+import { clearTable, htmlTable } from "../view/table/htmlTable";
+import { hiddenLevel, highlightLevel, levelParams, offhighlightLevel, showLevel } from "../view/taskField/levels";
+import { hiddenTask, showTask } from "../view/taskField/renderTask";
+import { help } from "./help";
 
 export const checkAnswer = (): void => {
   const input: HTMLInputElement | null = document.querySelector('.input-css');
@@ -22,40 +23,39 @@ export const checkAnswer = (): void => {
       checkInput(input, rightAnswer);
     }
   })
+  help();
 }
 
 const checkInput = (input: HTMLInputElement, rightVar: string, ): void => {
-  // const taskFiled = document.querySelector('.descr-wrapper');
-  // const taskFiledParent = document.querySelector('.task-field__wrapper');
-
-  const tableWrapper = document.querySelector('.table-wrapper');
-  const htmlField = document.querySelector('.layout');
-  const tableParent = document.querySelector('.play-field__table');
-  const htmlFieldParent = document.querySelector('.text-html');
-
   console.log(input.value);
   console.log(rightVar);
   console.log(state.currentLevel);
   if (input.value.trim().toLowerCase() === rightVar) {
     rightAnswerAnimation();
     setTimeout(() => {
-      clearElements(tableParent, tableWrapper);
-      clearElements(htmlFieldParent, htmlField);
-      removeAllTasks();
-      // clearElements(taskFiledParent, taskFiled);
-      // hiddenTask(state.currentLevel);
+      clearTable();
+      clearHTML();
+      hiddenTask(state.currentLevel);
       hiddenLevel(state.currentLevel);
-      state.completedLevels.push(state.currentLevel);
+      offhighlightLevel(state.currentLevel);
+
+      pushInkWinArr(state.currentLevel);
+
       if (checkWin()) alert('Are you win! Good work! Bon appetite!');
-      if (state.currentLevel < 15) {
-        state.currentLevel += 1;
-      } else {
+
+      if (state.currentLevel === 14) {
         state.currentLevel = 0;
+      } else if (state.currentLevel < 14) {
+        state.currentLevel += 1;
       }
+
       input.value = '';
       changeIndicatorRight();
-      viewLevel(state.currentLevel);
-      
+      htmlField(state.currentLevel);
+      htmlTable(state.currentLevel);
+      showTask(state.currentLevel);
+      showLevel(state.currentLevel);
+      highlightLevel(state.currentLevel);
     }, 1000);
   } else {
     changeIndicatorWrong();
@@ -81,12 +81,6 @@ const rightAnswerAnimation = (): void => {
   })
 }
 
-export const clearElements = (parent: Element | null, element: Element | null): void => {
-  if (parent && element) {
-    parent.removeChild(element);
-  }
-}
-
 const changeIndicatorRight = (): void => {
   const indicator = document.querySelector('.indicator');
   indicator?.classList.add('rightIndicator');
@@ -99,11 +93,18 @@ const changeIndicatorWrong = (): void => {
 
 const checkWin = (): boolean => {
   const winnerArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 14];
-  const sortUserArray = state.completedLevels.sort((a, b) => a - b);
+  const sortUserArray: number[] = state.completedLevels.sort((a, b) => a - b);
   if (winnerArray.length === sortUserArray.length) {
-    const sortArr = sortUserArray.every((item, i) => item === winnerArray[i]);
+    const sortArr: boolean = sortUserArray.every((item, i) => item === winnerArray[i]);
     return sortArr;
   }
   return false;
+}
+
+const pushInkWinArr = (level: number): void => {
+  const check: boolean = state.completedLevels.includes(level);
+  if (!check) {
+    state.completedLevels.push(state.currentLevel);
+  }
 }
 

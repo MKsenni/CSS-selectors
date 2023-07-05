@@ -15,20 +15,20 @@ export const useBurger = (): void => {
       // overlay.classList.toggle('active');
     };
     
-    const links = Array.from(burgerMenu.children);
+    // const links = Array.from(burgerMenu.children);
     
-    links.forEach((item) => {
-      item.addEventListener('click', () => {
-          closeBurger();
-      });
-    });
+    // links.forEach((item) => {
+    //   item.addEventListener('click', () => {
+    //       closeBurger();
+    //   });
+    // });
     
-    const closeBurger = (): void => {
-      burgerButton.classList.remove('transform');
-      burgerMenu.classList.remove('open');
-      document.body.classList.remove('noscroll');
-      // overlay.classList.remove('active');
-    };
+    // const closeBurger = (): void => {
+    //   burgerButton.classList.remove('transform');
+    //   burgerMenu.classList.remove('open');
+    //   document.body.classList.remove('noscroll');
+    //   // overlay.classList.remove('active');
+    // };
   }
 }
 

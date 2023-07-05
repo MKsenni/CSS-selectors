@@ -1,6 +1,10 @@
 import { Tags, TaskLevel } from "../../../types/types";
 import { TreeNode } from "../../model/TreeNode";
+// import { state } from "../../model/state";
 import { createElement } from "../../utills/createElement";
+// import { clearHTML } from "../htmlField/htmlField";
+// import { clearTable } from "../table/htmlTable";
+// import { hiddenTask, showTask } from "./renderTask";
 
 export type levels = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 |13 | 14 | 15;
 
@@ -13,28 +17,75 @@ interface Level {
 
 const count: levels = 15;
 
-function renderLevels(count: number): NodeListOf<HTMLDivElement> {
+export const renderLevels = (): void => {
   const levelsWrapper = document.querySelector('.levels-wrapper');
-  // const levelsBurger = document.querySelector('.burger__menu');
   for (let i = 0; i < count; i += 1) {
     const level = createElement('span', 'level');
     level.textContent = `Level ${i + 1} of ${count} `;
     levelsWrapper?.append(level);
-    // levelsBurger?.append(level);
   }
-  const allLevels: NodeListOf<HTMLDivElement> = document.querySelectorAll('.level');
-  return allLevels;
+  // return allLevels;
+}
+
+export const renderLevelsBurger = (): void => {
+  const levelsBurger = document.querySelector('.burger__menu');
+  for (let i = 0; i < count; i += 1) {
+    const level = createElement('li', 'level-burger');
+    level.textContent = `Level ${i + 1} of ${count} `;
+    levelsBurger?.append(level);
+  }
 }
 
 export const showLevel = (currentLevel: number): void => {
-  const allLevels = renderLevels(count);
+  const allLevels = document.querySelectorAll('.level');
   allLevels[currentLevel].classList.add('active');
 }
 
+export const highlightLevel = (currentLevel: number): void => {
+  const allLevels = document.querySelectorAll('.level-burger');
+  allLevels[currentLevel].classList.add('highlight-level');
+}
+
+export const offhighlightLevel = (currentLevel: number): void => {
+  const allLevels = document.querySelectorAll('.level-burger');
+  allLevels[currentLevel].classList.remove('highlight-level');
+}
+
 export const hiddenLevel = (currentLevel: number): void => {
-  const allLevels = renderLevels(count);
+  const allLevels = document.querySelectorAll('.level');
   allLevels[currentLevel].classList.remove('active');
 }
+
+export const removeAllLevels = (): void => {
+  const allLevels = document.querySelector('.burger__menu');
+  const allLevelsBurger = document.querySelector('.levels-wrapper');
+  allLevels?.replaceChildren();
+  allLevelsBurger?.replaceChildren();
+}
+
+// export const toggleLevelBurger = (): void => {
+//   const burgerMenu: HTMLUListElement | null = document.querySelector('.burger__menu');
+//   if (burgerMenu) {
+//     burgerMenu.addEventListener('click', (event) => {
+//       if (event) {
+//         const arrFromCollection = Array.from(burgerMenu.children);
+//         for (let i = 0; i < arrFromCollection.length; i += 1) {
+//           offhighlightLevel(state.currentLevel);
+//           highlightLevel(i);
+
+//         }
+        // arrFromCollection.forEach((item, i) => {
+        //   hiddenLevel(state.currentLevel);
+        //   showLevel(i);
+        //   clearTable();
+        //   clearHTML();
+        //   hiddenTask(state.currentLevel);
+        //   showTask(i);
+        // })
+//       }
+//     })
+//   }
+// }
 
 export const levelParams: Level[] = [
   {
