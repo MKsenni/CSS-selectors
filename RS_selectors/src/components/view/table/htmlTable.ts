@@ -8,8 +8,8 @@ export function htmlTable(currentLevel: number): HTMLElement | null {
 
   if (table) {
   const tableWrapper = createElement('div', 'table-wrapper');
-  const levelText: string = nodeToElement(levelParams[currentLevel].node);
-  tableWrapper.innerHTML = levelText;
+  nodeToElement(levelParams[currentLevel].node, tableWrapper);
+  // tableWrapper.append(levelText);
   table.append(tableWrapper);
   }
   return table;

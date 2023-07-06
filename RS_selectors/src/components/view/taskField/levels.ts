@@ -224,12 +224,12 @@ export const levelParams: Level[] = [
             ),
             new TreeNode(
               Tags.PLATE,//#green
-              {id: 'green', datatooltip: '<plate></plate>'},
+              {id: 'green', datatooltip: '<plate id="green"></plate>'},
               false,
               [
                 new TreeNode(
                   Tags.EGGS,//.boiled
-                  {class: 'boiled', datatooltip: '<eggsclas="boiled"/>'},
+                  {class: 'boiled', datatooltip: '<eggs class="boiled" />'},
                   true,
                   undefined,
                 ),
@@ -338,7 +338,7 @@ export const levelParams: Level[] = [
               [
                 new TreeNode(
                   Tags.EGGS,//.fried
-                  {class: 'fired', datatooltip: '<redhot class="fired" />'},
+                  {class: 'fired', datatooltip: '<eggs class="fired" />'},
                   true,
                   undefined,
                 ),
@@ -421,7 +421,7 @@ export const levelParams: Level[] = [
               [
                 new TreeNode(
                   Tags.REDHOT,
-                  undefined,
+                  {datatooltip: '<redhot class="fired" />'},
                   true,
                   undefined,
                 ),

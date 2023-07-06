@@ -430,7 +430,6 @@ plate {
   border-bottom: solid 5px #DDD;
   border-radius: 100px;
   background: white;
-  box-shadow: 0px 8px 0px rgba(0,0,0,.1);
   cursor: pointer;
 }
 
@@ -457,7 +456,6 @@ plate#green {
   border-bottom: solid 5px #537c4a;
   border-radius: 100px;
   background: rgb(85, 195, 115);
-  box-shadow: 0px 8px 0px rgba(0,0,0,.1);
   cursor: pointer;
 }
 
@@ -491,7 +489,6 @@ cookie.small {
   border-style: solid;
   border-width: 2px 4px 8px 4px ;
   border-color: #4f250d;
-  box-shadow: 0px 5px 0px rgba(0,0,0,.2);
   background: #873d12;
   cursor: pointer;
 }
@@ -508,7 +505,7 @@ cookie.small::before {
   background-color: black;
 }
 
-cookie.small::after {
+/* cookie.small::after {
   content: "";
   display: block;
   position: absolute;
@@ -518,7 +515,7 @@ cookie.small::after {
   width: 3px;
   border-radius: 3px;
   background-color: black;
-}
+} */
 
 cookie.big {
   display: inline-block;
@@ -532,7 +529,6 @@ cookie.big {
   border-style: solid;
   border-width: 2px 4px 8px 4px ;
   border-color: #4f250d;
-  box-shadow: 0px 5px 0px rgba(0,0,0,.2);
   background: #873d12;
   cursor: pointer;
 }
@@ -549,7 +545,7 @@ cookie.big::before {
   background-color: black;
 }
 
-cookie.big::after {
+/* cookie.big::after {
   content: "";
   display: block;
   position: absolute;
@@ -559,7 +555,7 @@ cookie.big::after {
   width: 5px;
   border-radius: 3px;
   background-color: black;
-}
+} */
 
 tablecloth {
   display: flex;
@@ -588,9 +584,9 @@ tablecloth {
   cursor: pointer;
 }
 
-/* tablecloth * {
-
-} */
+tablecloth *:hover {
+  box-shadow: 0px 10px 10px rgba(214, 25, 25, 0.665);
+}
 
 coffee {
   position: relative;
@@ -599,7 +595,6 @@ coffee {
   border-width: 4px 4px 4px 4px;
   height: 60px;
   width: 60px;
-  box-shadow: 0px 8px 0px rgba(0,0,0,.2);
   display: inline-block;
   background: #493518;
   border-color: #e3dcd3;
@@ -632,7 +627,6 @@ croissant {
   border-style: solid;
   border-width: 6px 4px 9px 4px;
   height: 39px;
-  box-shadow: 0px 5px 0px rgba(0,0,0,.2);
   display: inline-block;
   background: orange;
   border-color: #bd6e07;
@@ -691,7 +685,6 @@ eggs.boiled {
   border-bottom-right-radius: 125px;
   border-bottom-left-radius: 125px;
   border-width: 2px 4px 6px 4px;
-  box-shadow: 0px 5px 0px rgba(0,0,0,.2);
   background: #ececda;
   border-color: #e2dfd7;
   /* transition: transform ease-out .2s; */
@@ -722,7 +715,6 @@ eggs.fired {
   border-style: solid;
   border-width: 2px 4px 15px 4px;
   z-index: 300;
-  box-shadow: 0px 5px 0px rgba(0,0,0,.2);
   background: #ececda;
   border-color: #e2dfd7;
   /* transition: transform ease-out .2s; */
@@ -754,7 +746,6 @@ toast {
   border-top-right-radius: 4px;
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
-  box-shadow: 0px 5px 0px rgba(0,0,0,.2);
   background: #e9cb93;
   border-color: #965909;
   z-index: 300;
@@ -784,7 +775,6 @@ orange {
   border-radius: 100px;
   border-style: solid;
   border-width: 2px 4px 10px 4px;
-  box-shadow: 0px 5px 0px rgba(0,0,0,.2);
   background: orange;
   border-color: #bd6e07;
   z-index: 300;
@@ -814,7 +804,6 @@ apple {
   border-radius: 100px;
   border-style: solid;
   border-width: 2px 4px 10px 4px;
-  box-shadow: 0px 5px 0px rgba(0,0,0,.2);
   background: #7cd53d;
   border-color: #60a92d;
   z-index: 300;
@@ -845,7 +834,6 @@ redhot {
   border-radius: 30px;
   border: solid 2px #d36519;
   border-width: 2px 2px 6px 2px;
-  box-shadow: 4px 3px 0px rgba(0, 0, 0, 0.2);
   /* transition: transform ease-out .2s; */
   cursor: pointer;
 }
@@ -863,7 +851,7 @@ redhot::before {
   rotate: 90deg;
 }
 
-redhot::after {
+/* redhot::after {
   content: "";
   display: block;
   position: absolute;
@@ -874,7 +862,7 @@ redhot::after {
   left: 43%;
   border-radius: 3px;
   rotate: 90deg;
-}
+} */
 
 coffee#with-milk {
   position: relative;
@@ -883,7 +871,6 @@ coffee#with-milk {
   border-width: 4px 4px 4px 4px;
   height: 60px;
   width: 60px;
-  box-shadow: 0px 8px 0px rgba(0,0,0,.2);
   display: inline-block;
   background: #e1af62;
   border-color: #e3dcd3;
@@ -921,8 +908,8 @@ plate > toast {
 }
 
 toast > eggs.fired {
-  top: calc(50% - 59px);
-  left: calc(50% - 40px);
+  top: calc(50% - 44px);
+  left: calc(50% - 30px);
 }
 
 plate > croissant {
