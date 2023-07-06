@@ -16,7 +16,7 @@ export const help = (): void => {
       } else {
         setTimeout(() => {
           writeText(word);
-        }, 700);
+        }, 500);
       }
     }
     buttonHelp?.addEventListener('click', (event): void => {

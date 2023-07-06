@@ -1,4 +1,5 @@
 import { TreeNode } from "../model/TreeNode";
+import { createElement } from "../utills/createElement";
 
 export function nodeToElement(root: TreeNode, parentElement: HTMLElement): void {
   const tag = document.createElement(root.tags);
@@ -22,39 +23,32 @@ export function nodeToElement(root: TreeNode, parentElement: HTMLElement): void 
   }
 }
 
-export function nodeToString(root: TreeNode, level = 0): string {
-  let tempalte = '';
-  const space: string = '\t'.repeat(level);
+export function nodeToString(root: TreeNode, level = 0, parentElement: HTMLElement): void {
+  const pre = createElement('pre', 'layout-code');
+  const code = createElement('code', 'layout-code');
   if (root) {
+    const space: string = ' '.repeat(level);
     let atr = '';
     if (root.attribute?.class) {
-      atr = `class="${root.attribute.class}"`;
-      tempalte += `${space}<${root.tags} ${atr}>\n`;
-    } else if (root.attribute?.id) {
-      atr = `id="${root.attribute.id}"`
-      tempalte += `${space}<${root.tags} ${atr}>\n`;
-    } else {
-      tempalte += `${space}<${root.tags}>\n`;
+      atr += `class="${root.attribute.class}"`;
     }
-    // tempalte += `${space}<${root.tags}>\n`;
-    if (root.childTree) {
-      level += 1;
-      tempalte += root.childTree.map(child => nodeToString(child, level)).join('');
-      tempalte += `${space}</${root.tags}>\n`;
+    if (root.attribute?.id) {
+      atr += `id="${root.attribute.id}"`
     }
     if (!root.childTree) {
-      // let atr = '';
-      if (root.attribute?.class) {
-        atr = `class="${root.attribute.class}"`;
-        tempalte = `${space}<${root.tags} ${atr} />\n`;
-      } else if (root.attribute?.id) {
-        atr = `id="${root.attribute.id}"`
-        tempalte = `${space}<${root.tags} ${atr} />\n`;
-      } else {
-        tempalte = `${space}<${root.tags} />\n`;
-      }
-      // tempalte = `${space}<${root.tags} />\n`;
+      level += 1;
+      code.textContent = `${space}<${root.tags} ${atr} />\n`;
+      level -= 1;
+    } else {
+      level += 1;
+      code.textContent += `${space}<${root.tags} ${atr}>\n`;
+    }
+    parentElement.append(code);
+    if (root.childTree) {
+      const code = createElement('code', 'layout-code');
+      root.childTree.forEach(child => nodeToString(child, level, pre));
+      code.textContent = `${space}</${root.tags}>\n`;
+      parentElement.append(pre, code);
     }
   }
-  return tempalte;
 }
