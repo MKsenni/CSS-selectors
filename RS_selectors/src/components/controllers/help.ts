@@ -6,15 +6,23 @@ export const help = (): void => {
   const input: HTMLInputElement | null = document.querySelector('.input-css');
 
   if (input) {
+    let index = 1;
+    const writeText = (word: string): string | undefined => {
+      input.value = word.slice(0, index);
+      index += 1;
+      
+      if (index > word.length) {
+        return word;
+      } else {
+        setTimeout(() => {
+          writeText(word);
+        }, 700);
+      }
+    }
     buttonHelp?.addEventListener('click', (event): void => {
       event.preventDefault();
       if (event) {
-        const char: string[] = levelParams[state.currentLevel].answer.split('');
-        char.forEach((item) => {
-          setTimeout(() => {
-            input.value = item;
-          }, 1000);
-        })
+        writeText(levelParams[state.currentLevel].answer);
       }
     })
   }
