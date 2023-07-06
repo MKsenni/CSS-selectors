@@ -195,6 +195,10 @@ html {
   margin-left: 5px;
 }
 
+.text-html {
+  font-size: 0.8rem;
+}
+
 .layout {
   margin: 0;
 }
@@ -590,6 +594,10 @@ tablecloth *:hover {
   box-shadow: 0px 10px 10px rgba(214, 25, 25, 0.665);
 }
 
+[data-id] {
+  box-shadow: 0px 10px 10px rgba(214, 25, 25, 0.665);
+}
+
 coffee {
   position: relative;
   border-radius: 100px;
@@ -928,10 +936,8 @@ plate > croissant {
   width: 300px; /*Ширина подсказки*/
   right: -6rem; 
   top: 0; /*Положение подсказки*/
-  /* background: #3989c9; Синий цвет фона */
   color: rgb(46, 25, 3); /* Цвет текста */
   padding: -3rem; /* Поля вокруг текста */
-  /* box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); Параметры тени */
   pointer-events: none; /* Подсказка */
   opacity: 0; /* Подсказка невидима */
   transition: 1s; /* Время появления подсказки */

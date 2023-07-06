@@ -1,10 +1,11 @@
 import { Arrows } from '../controllers/arrows/Arrows';
-import { checkAnswer, wrongAnswerAnimation } from '../controllers/conroller';
+import { checkAnswer, highlightHTML, wrongAnswerAnimation } from '../controllers/conroller';
 import { getLocalStorage, setLocalStorage } from '../controllers/localStorage/localStorage';
 import { state } from '../model/state';
 import { useBurger } from '../controllers/burgerMenu/burgerList';
 import { viewLevel } from '../view/view';
 import './style.css';
+import { toggleLevelBurger } from '../view/taskField/levels';
 
 export const appLoadGame = (): void => {
   window.addEventListener('load', () => {
@@ -15,6 +16,8 @@ export const appLoadGame = (): void => {
     useBurger();
   })
   wrongAnswerAnimation();
+  toggleLevelBurger();
+  highlightHTML();
 }
 
 export const beforeUnloadGame = (): void => {

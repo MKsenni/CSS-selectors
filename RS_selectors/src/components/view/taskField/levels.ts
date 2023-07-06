@@ -1,6 +1,6 @@
 import { Tags, TaskLevel } from "../../../types/types";
 import { TreeNode } from "../../model/TreeNode";
-// import { state } from "../../model/state";
+import { state } from "../../model/state";
 import { createElement } from "../../utills/createElement";
 // import { clearHTML } from "../htmlField/htmlField";
 // import { clearTable } from "../table/htmlTable";
@@ -24,7 +24,6 @@ export const renderLevels = (): void => {
     level.textContent = `Level ${i + 1} of ${count} `;
     levelsWrapper?.append(level);
   }
-  // return allLevels;
 }
 
 export const renderLevelsBurger = (): void => {
@@ -63,17 +62,18 @@ export const removeAllLevels = (): void => {
   allLevelsBurger?.replaceChildren();
 }
 
-// export const toggleLevelBurger = (): void => {
-//   const burgerMenu: HTMLUListElement | null = document.querySelector('.burger__menu');
-//   if (burgerMenu) {
-//     burgerMenu.addEventListener('click', (event) => {
-//       if (event) {
-//         const arrFromCollection = Array.from(burgerMenu.children);
-//         for (let i = 0; i < arrFromCollection.length; i += 1) {
-//           offhighlightLevel(state.currentLevel);
-//           highlightLevel(i);
+export const toggleLevelBurger = (): void => {
+  const burgerMenu: HTMLUListElement | null = document.querySelector('.burger__menu');
+  if (burgerMenu) {
+    burgerMenu.addEventListener('click', (event) => {
+      if (event) {
+        const arrFromCollection = Array.from(burgerMenu.children);
+        for (let i = 0; i < arrFromCollection.length; i += 1) {
+          if (arrFromCollection[i])
+          offhighlightLevel(state.currentLevel);
+          // highlightLevel();
 
-//         }
+        }
         // arrFromCollection.forEach((item, i) => {
         //   hiddenLevel(state.currentLevel);
         //   showLevel(i);
@@ -82,10 +82,10 @@ export const removeAllLevels = (): void => {
         //   hiddenTask(state.currentLevel);
         //   showTask(i);
         // })
-//       }
-//     })
-//   }
-// }
+      }
+    })
+  }
+}
 
 export const levelParams: Level[] = [
   {
@@ -100,7 +100,7 @@ export const levelParams: Level[] = [
         [
           new TreeNode(
             Tags.PLATE,
-            {datatooltip: '<plate/>'},
+            {datatooltip: '<plate/>', dataid: 'redPlate'},
             true,
             undefined,
           ),

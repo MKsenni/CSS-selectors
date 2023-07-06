@@ -3,7 +3,8 @@ import { Tags } from "../../types/types";
 type Attribute = {
   class?: string;
   id?: string,
-  datatooltip?:string ,
+  datatooltip?: string,
+  dataid?: string,
 }
 
 export class TreeNode {

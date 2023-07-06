@@ -16,11 +16,13 @@ export class Arrows {
     this.input = document.querySelector('.input-css');
     this.layoutHTML = document.querySelector('.layout');
     this.changeHeaderLevel();
+    
   }
 
   public changeHeaderLevel(): void {
     this.arrows?.addEventListener('click', (event) => {
       this.clearInput();
+      this.input?.focus();
       clearTable();
       clearHTML();
       if ((event.target as HTMLElement).classList.contains('arrows__right')) {

@@ -108,3 +108,28 @@ const pushInkWinArr = (level: number): void => {
   }
 }
 
+
+//TODO: сделать функцию подсветки элемента из разметки на элемент на столе
+export const highlightHTML = (): void => {
+  const tag = document.querySelector('.text-html');
+  const plate = document.getElementsByTagName('plate');
+  
+  // const dataAtr = tag?.getAttribute('data-id');
+  tag?.addEventListener('mouseover', (event) => {
+    if (event) {
+      const arr = Array.from(plate);
+      arr?.forEach(element => {
+        element.setAttribute('data-id', '');
+      });
+    }
+  })
+
+  tag?.addEventListener('mouseout', (event) => {
+    if (event) {
+      const arr = Array.from(plate);
+      arr?.forEach(element => {
+        element.removeAttribute('data-id');
+      });
+    }
+  })
+}

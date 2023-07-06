@@ -46,6 +46,7 @@ export function nodeToString(root: TreeNode, level = 0, parentElement: HTMLEleme
     parentElement.append(code);
     if (root.childTree) {
       const code = createElement('code', 'layout-code');
+      
       root.childTree.forEach(child => nodeToString(child, level, pre));
       code.textContent = `${space}</${root.tags}>\n`;
       parentElement.append(pre, code);
