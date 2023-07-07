@@ -3,7 +3,6 @@ import { clearHTML, htmlField } from "../view/htmlField/htmlField";
 import { clearTable, htmlTable } from "../view/table/htmlTable";
 import { hiddenLevel, highlightLevel, levelParams, offhighlightLevel, showLevel } from "../view/taskField/levels";
 import { hiddenTask, showTask } from "../view/taskField/renderTask";
-import { help } from "./help";
 
 export const checkAnswer = (): void => {
   const input: HTMLInputElement | null = document.querySelector('.input-css');
@@ -23,13 +22,9 @@ export const checkAnswer = (): void => {
       checkInput(input, rightAnswer);
     }
   })
-  help();
 }
 
 const checkInput = (input: HTMLInputElement, rightVar: string, ): void => {
-  console.log(input.value);
-  console.log(rightVar);
-  console.log(state.currentLevel);
   if (input.value.trim().toLowerCase() === rightVar) {
     rightAnswerAnimation();
     setTimeout(() => {

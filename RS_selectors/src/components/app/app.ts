@@ -6,6 +6,7 @@ import { useBurger } from '../controllers/burgerMenu/burgerList';
 import { viewLevel } from '../view/view';
 import './style.css';
 import { toggleLevelBurger } from '../view/taskField/levels';
+import { help } from '../controllers/help';
 
 export const appLoadGame = (): void => {
   window.addEventListener('load', () => {
@@ -18,6 +19,7 @@ export const appLoadGame = (): void => {
   wrongAnswerAnimation();
   toggleLevelBurger();
   highlightHTML();
+  help();
 }
 
 export const beforeUnloadGame = (): void => {

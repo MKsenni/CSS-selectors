@@ -1,3 +1,4 @@
+import { help } from "../controllers/help";
 import { htmlField } from "./htmlField/htmlField";
 import { htmlTable } from "./table/htmlTable";
 import { highlightLevel, renderLevels, renderLevelsBurger, showLevel } from "./taskField/levels";
@@ -12,4 +13,5 @@ export function viewLevel (currentLevel: number): void {
   highlightLevel(currentLevel);
   renderTasks();
   showTask(currentLevel);
+  help();
 }

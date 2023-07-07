@@ -20,9 +20,11 @@ export const help = (): void => {
       }
     }
     buttonHelp?.addEventListener('click', (event): void => {
+      index = 1;
       event.preventDefault();
       if (event) {
         writeText(levelParams[state.currentLevel].answer);
+        input.focus();
       }
     })
   }
