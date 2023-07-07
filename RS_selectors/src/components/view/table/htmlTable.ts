@@ -1,7 +1,7 @@
-import { levelParams } from "../taskField/levels";
 import { nodeToElement } from "../nodeToString";
 import { createElement } from "../../utills/createElement";
 import { clearElements } from "../../utills/clearElement";
+import { levelParams } from "../../model/dataLevels";
 
 export function htmlTable(currentLevel: number): HTMLElement | null {
   const table: HTMLElement | null = document.querySelector('.play-field__table');

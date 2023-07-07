@@ -1,5 +1,5 @@
-import { state } from "../model/state";
-import { levelParams } from "../view/taskField/levels";
+import { levelParams } from "../../model/dataLevels";
+import { state } from "../../model/state";
 
 export const help = (): void => {
   const buttonHelp = document.querySelector('.help');

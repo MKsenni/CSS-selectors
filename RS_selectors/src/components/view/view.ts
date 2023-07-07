@@ -1,7 +1,7 @@
-import { help } from "../controllers/help";
+import { highlightLevel } from "../controllers/highlight/highlight";
 import { htmlField } from "./htmlField/htmlField";
 import { htmlTable } from "./table/htmlTable";
-import { highlightLevel, renderLevels, renderLevelsBurger, showLevel } from "./taskField/levels";
+import { renderLevels, renderLevelsBurger, showLevel } from "./taskField/levels";
 import { renderTasks, showTask } from "./taskField/renderTask";
 
 export function viewLevel (currentLevel: number): void {
@@ -13,5 +13,4 @@ export function viewLevel (currentLevel: number): void {
   highlightLevel(currentLevel);
   renderTasks();
   showTask(currentLevel);
-  help();
 }
