@@ -407,6 +407,7 @@ html {
   list-style: none;
   text-align: center;
   background-color: #ffe6cce8;
+  box-shadow: -6px 0px 4px 2px #ffe6cce8;
   transition-duration: 0.5s;
   overflow: auto;
   z-index: 100;

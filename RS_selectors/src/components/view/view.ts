@@ -1,3 +1,4 @@
+import { toggleLevelBurger } from "./taskField/toggleLevelBurger";
 import { highlightLevel } from "../controllers/highlight/highlight";
 import { htmlField } from "./htmlField/htmlField";
 import { htmlTable } from "./table/htmlTable";
@@ -13,4 +14,5 @@ export function viewLevel (currentLevel: number): void {
   highlightLevel(currentLevel);
   renderTasks();
   showTask(currentLevel);
+  toggleLevelBurger();
 }

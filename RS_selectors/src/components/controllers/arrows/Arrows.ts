@@ -3,6 +3,7 @@ import { clearHTML, htmlField } from "../../view/htmlField/htmlField";
 import { clearTable, htmlTable } from "../../view/table/htmlTable";
 import { hiddenLevel, showLevel } from "../../view/taskField/levels";
 import { hiddenTask, showTask } from "../../view/taskField/renderTask";
+import { highlightLevel, offhighlightLevel } from "../highlight/highlight";
 
 export class Arrows {
   public state: IState;
@@ -16,7 +17,6 @@ export class Arrows {
     this.input = document.querySelector('.input-css');
     this.layoutHTML = document.querySelector('.layout');
     this.changeHeaderLevel();
-    
   }
 
   public changeHeaderLevel(): void {
@@ -28,6 +28,7 @@ export class Arrows {
       if ((event.target as HTMLElement).classList.contains('arrows__right')) {
         hiddenLevel(this.state.currentLevel);
         hiddenTask(this.state.currentLevel);
+        offhighlightLevel(this.state.currentLevel);
         if (this.state.currentLevel === 14) {
           this.state.currentLevel = 0;
         } else if (this.state.currentLevel < 14) {
@@ -37,9 +38,11 @@ export class Arrows {
         htmlField(this.state.currentLevel);
         showLevel(this.state.currentLevel);
         showTask(this.state.currentLevel);
+        highlightLevel(this.state.currentLevel);
       } else if ((event.target as HTMLElement).classList.contains('arrows__left')) {
         hiddenLevel(this.state.currentLevel);
         hiddenTask(this.state.currentLevel);
+        offhighlightLevel(this.state.currentLevel);
         if (this.state.currentLevel === 0) {
           this.state.currentLevel = 14;
         } else if (this.state.currentLevel > 0) {
@@ -49,6 +52,7 @@ export class Arrows {
         htmlField(this.state.currentLevel);
         showLevel(this.state.currentLevel);
         showTask(this.state.currentLevel);
+        highlightLevel(this.state.currentLevel);
       }
     })
   }
