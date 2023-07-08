@@ -40,6 +40,7 @@ html {
   font-size: 1.1rem;
   letter-spacing: 0.1rem;
   color: rgb(99 53 5);
+  overflow: hidden;
 }
 
 .header .title {

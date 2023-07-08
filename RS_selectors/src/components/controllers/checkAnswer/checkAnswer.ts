@@ -26,7 +26,7 @@ export const checkAnswer = (): void => {
   })
 }
 
-const checkInput = (input: HTMLInputElement, rightVar: string, ): void => {
+export const checkInput = (input: HTMLInputElement, rightVar: string, ): void => {
   if (input.value.trim().toLowerCase() === rightVar) {
     rightAnswerAnimation();
     setTimeout(() => {
@@ -36,9 +36,9 @@ const checkInput = (input: HTMLInputElement, rightVar: string, ): void => {
       hiddenLevel(state.currentLevel);
       offhighlightLevel(state.currentLevel);
 
-      pushInkWinArr(state.currentLevel);
+      pushInWinArr(state.currentLevel);
 
-      if (checkWin()) alert('Are you win! Good work! Bon appetite!');
+      checkWin();
 
       if (state.currentLevel === 14) {
         state.currentLevel = 0;
@@ -78,29 +78,32 @@ const rightAnswerAnimation = (): void => {
   })
 }
 
-const changeIndicatorRight = (): void => {
+export const changeIndicatorRight = (): void => {
   const indicator = document.querySelector('.indicator');
   indicator?.classList.add('rightIndicator');
 }
 
-const changeIndicatorWrong = (): void => {
+export const changeIndicatorWrong = (): void => {
   const indicator = document.querySelector('.indicator');
   indicator?.classList.remove('rightIndicator');
 }
 
-const checkWin = (): boolean => {
+export const checkWin = (): boolean => {
   const winnerArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 14];
   const sortUserArray: number[] = state.completedLevels.sort((a, b) => a - b);
   if (winnerArray.length === sortUserArray.length) {
     const sortArr: boolean = sortUserArray.every((item, i) => item === winnerArray[i]);
-    return sortArr;
+    if (sortArr === true) {
+      return true;
+    }
   }
   return false;
 }
 
-const pushInkWinArr = (level: number): void => {
-  const check: boolean = state.completedLevels.includes(level);
+export const pushInWinArr = (currentLevel: number): void => {
+  const check: boolean = state.completedLevels.includes(currentLevel);
   if (!check) {
-    state.completedLevels.push(state.currentLevel);
+    state.completedLevels.push(currentLevel);
+    console.log(state.completedLevels);
   }
 }

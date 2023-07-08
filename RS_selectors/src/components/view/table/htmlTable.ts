@@ -9,7 +9,6 @@ export function htmlTable(currentLevel: number): HTMLElement | null {
   if (table) {
   const tableWrapper = createElement('div', 'table-wrapper');
   nodeToElement(levelParams[currentLevel].node, tableWrapper);
-  // tableWrapper.append(levelText);
   table.append(tableWrapper);
   }
   return table;

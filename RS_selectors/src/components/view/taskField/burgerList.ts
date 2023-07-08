@@ -12,14 +12,5 @@ export const useBurger = (): void => {
       burgerButton.classList.toggle('transform');
       burgerMenu.classList.toggle('open');
     };
-    
-    // const links = Array.from(burgerMenu.children);
-    
-    // links.forEach((item) => {
-    //   item.addEventListener('click', () => {
-    //       closeBurger();
-    //   });
-    // });
-    
   }
 }

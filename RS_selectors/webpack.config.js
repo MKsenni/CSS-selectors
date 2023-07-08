@@ -23,7 +23,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     clean: true,
     filename: '[name][hash].js',
-    assetModuleFilename: 'assets/[hash][ext]',
+    assetModuleFilename: 'asset/[name][ext]',
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -34,7 +34,7 @@ module.exports = {
     }),
     new EslintPlugin({ 
       extensions: 'ts'
-    })
+    }),
   ],
   resolve: {
     extensions: ['.ts', '.js', '.json'],
@@ -79,10 +79,6 @@ module.exports = {
         },
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: 'asset/resource',
-      },
-      {
         test: /\.(jpe?g|png|webp|gif|svg)$/i,
         use: [
           {
@@ -111,7 +107,7 @@ module.exports = {
         ],
         type: 'asset/resource',
         generator: {
-          filename: 'image/[name].ext',
+          filename: 'asset/[name][ext]',
         },
       },
       {

@@ -1,5 +1,5 @@
 import { Levels, TitleTask, TaskLevel, Selector, DescriptionTask, Examples } from "../../../types/types"
-import { generateTask, tasksCards } from "./renderTask"
+import { generateTask } from "./renderTask"
 
 const dataTask = [
   {
